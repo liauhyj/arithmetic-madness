@@ -1,0 +1,20 @@
+body {
+ background-image: url("/images/background.jpg");
+ max-height: 100vh;
+ max-width: 100vw;
+ overflow: hidden;
+ background-size: cover;
+ background-position: top right;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.logo-width{
+	width: 50%;
+}

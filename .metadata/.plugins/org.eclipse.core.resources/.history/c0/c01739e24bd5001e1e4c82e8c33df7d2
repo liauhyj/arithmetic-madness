@@ -1,0 +1,11 @@
+package com.example.demo.utilities;
+
+import java.util.Random;
+
+public class NumberUtilities 
+{
+	public static int getRandomNumber(int from, int to)
+	{
+		return new Random().nextInt((to - from) + from);
+	}
+}

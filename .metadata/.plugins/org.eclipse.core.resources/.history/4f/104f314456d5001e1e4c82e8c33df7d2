@@ -1,0 +1,36 @@
+package com.example.demo.model;
+
+public class Question 
+{
+	private int firstNumber;
+	private int secondNumber;
+	private String operator;
+	private int answer;
+	
+	public int getFirstNumber() {
+		return firstNumber;
+	}
+	public void setFirstNumber(int firstNumber) {
+		this.firstNumber = firstNumber;
+	}
+	public int getSecondNumber() {
+		return secondNumber;
+	}
+	public void setSecondNumber(int secondNumber) {
+		this.secondNumber = secondNumber;
+	}
+	public String getOperator() {
+		return operator;
+	}
+	public void setOperator(String operator) {
+		this.operator = operator;
+	}
+	public int getAnswer() {
+		return answer;
+	}
+	public void setAnswer(int answer) {
+		this.answer = answer;
+	}
+	
+	
+}

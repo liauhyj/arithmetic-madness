@@ -1,0 +1,50 @@
+package com.example.demo.service;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+public class GameOperations 
+{
+	private static final String[] operationArr = new String[] {"+", "-", "*", "/"};
+	
+	public static void main(String[] args) {
+		System.out.println(retrieveRandomOperation());
+	}
+	
+	public static List<int[]> initializeNumberPairs(int floor, int ceiling)
+	{
+		List<int[]> result = new ArrayList<>();
+		
+		for (int i = floor; i <= ceiling; i++)
+		{
+			for (int j = floor; j <= ceiling; j++)
+			{
+				result.add(new int[] {i, j});
+			}
+		}
+		
+		Collections.shuffle(result);
+		
+		return result;
+	}
+	
+	public static String retrieveRandomOperation()
+	{
+		return operationArr[new Random().nextInt(operationArr.length)];
+	}
+	
+	// test methods
+	public static void printIntFromList(List<int[]> list)
+	{
+		for (int[] intArr : list) 
+		{
+			String s = "";
+			for (int i = 0; i < intArr.length; i++)
+			{
+				s = s + intArr[i] + " ";
+			}
+			System.out.println(s.trim());
+		}
+	}
+}

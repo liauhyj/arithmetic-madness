@@ -1,0 +1,8 @@
+package com.example.demo.model;
+
+public class Question 
+{
+	private int firstNumber;
+	private int secondNumber;
+	private String operator;
+}

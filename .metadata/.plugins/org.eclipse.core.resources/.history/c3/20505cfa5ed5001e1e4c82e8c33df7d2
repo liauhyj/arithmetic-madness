@@ -1,0 +1,47 @@
+package com.example.demo.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.demo.model.Question;
+import com.example.demo.service.GameService;
+
+@Controller
+public class BaseController 
+{
+	private List<Question> questionList = new ArrayList<>();
+	private int score = 1;
+	
+	@GetMapping("/game")
+	public String game(Model model) 
+	{
+		questionList = GameService.initializeQuestions(0, 12);
+		model.addAttribute("question", questionList.get(0));
+		String scoreStr = Integer.toString(score);
+		model.addAttribute("greeting", "greeting");
+		return "game";
+	}
+	
+	@PostMapping("/validate")
+	public String validate(@ModelAttribute Question question, Model model)
+	{
+		if (GameService.isAnswerCorrect(question))
+		{
+			questionList.remove(0);
+			model.addAttribute("question", questionList.get(0));
+			score++;
+//			model.addAttribute("score", String.valueOf(score));
+		}
+		else
+		{
+			model.addAttribute("question", questionList.get(0));
+		}
+		return "game";
+	}
+}

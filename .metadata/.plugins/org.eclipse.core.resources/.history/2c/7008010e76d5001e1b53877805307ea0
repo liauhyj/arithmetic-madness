@@ -1,0 +1,47 @@
+body {
+	background-image: url("/images/background.jpg");
+	max-height: 100vh;
+ 	max-width: 100vw;
+ 	overflow: hidden;
+ 	background-size: cover;
+ 	background-position: top right;
+}
+
+.center-main {
+/*	background-color: black;*/
+  	margin: auto;
+  	top: 50%;
+  	left: 50%;
+/*  	transform: translate(-50%, -50%);*/
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.right-align{
+	text-align: right;
+}
+
+.center-game {
+/*	background-color: black;*/
+  	margin: auto;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	display: flex;
+  	justify-content: center;
+  	align-items: center;
+}
+
+.center {
+	text-align: center;
+}
+
+.start-btn {
+	width: 100%;
+}
+
+.logo-width{
+	width: 50%;
+}
+

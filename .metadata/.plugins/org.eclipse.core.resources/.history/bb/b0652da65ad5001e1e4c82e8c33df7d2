@@ -1,0 +1,66 @@
+package com.example.demo.service;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+import com.example.demo.model.Question;
+import com.example.demo.utility.NumberUtilities;
+
+public class GameService 
+{	
+	public static final String[] operationArr = new String[] {"+", "-", "*", "/"};
+	
+	public static void main(String[] args) {
+		System.out.println(retrieveRandomOperation());
+	}
+	
+	public static List<Question> initializeQuestions(int floor, int ceiling)
+	{
+		List<Question> result = new ArrayList<>();
+		
+		for (int i = floor; i <= ceiling; i++)
+		{
+			for (int j = floor; j <= ceiling; j++)
+			{
+				Question temp = new Question();
+				temp.setQuestionString(phraseQuestion(i, j));
+				result.add(temp);
+			}
+		}
+		
+		Collections.shuffle(result);
+		
+		return result;
+	}
+	
+	public static String retrieveRandomOperation()
+	{
+		return operationArr[NumberUtilities.getRandomNumber(0, operationArr.length)];
+	}
+	
+	public static String phraseQuestion(int firstNumber, int secondNumber)
+	{
+		String result = "";
+		
+		result = String.format("%s %s %s =", firstNumber, retrieveRandomOperation(), secondNumber);
+		
+		return result;
+	}
+	
+	public
+	
+	// test methods
+	public static void printIntFromList(List<int[]> list)
+	{
+		for (int[] intArr : list) 
+		{
+			String s = "";
+			for (int i = 0; i < intArr.length; i++)
+			{
+				s = s + intArr[i] + " ";
+			}
+			System.out.println(s.trim());
+		}
+	}
+}
